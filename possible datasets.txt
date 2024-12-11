@@ -1,0 +1,4 @@
+MinneApple https://conservancy.umn.edu/items/e1bb4015-e92a-4295-822c-d21d277ecfbd 
+labeled data: https://universe.roboflow.com/ofpreyklmbl-fkds/apples-3dpiq
+
+A Seamless Deep Learning Approach for Apple Detection, Depth Estimation, and Tracking Using YOLO Models Enhanced by Multi-Head Attention Mechanism 

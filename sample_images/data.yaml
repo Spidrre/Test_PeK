@@ -1,0 +1,6 @@
+names:
+- apple
+nc: 1
+
+train: train3-8/images
+val: images

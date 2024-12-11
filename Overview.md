@@ -1,0 +1,37 @@
+# Project Overview
+
+This project is aimed on exploration of various approaches for recognition of apples on sample images and provision of list of them apples with coordinates of their centers (in pixels). Several methodologies were tested, ranging from traditional image processing techniques to deep learning models. Below is a summary of the approaches taken and their respective outcomes.
+
+## Files and their contents
+
+- **solution.ipynb**: Solution for this task
+- **train_YOLO_detector.ipynb**:  Check original YOLOv8 and then train it on publicly avaliable dataset
+- **test_YOLO_detector.ipynb**: Test fine-tuned models with SAHI
+- **nonDL_approach.ipynb**: Non-Deep Learning Approach
+
+## Approaches and Results
+
+### 1. Non-Deep Learning Approach
+- **Description**: This approach utilized traditional image processing techniques, including edge detection and contour finding, to identify objects in images.
+- **Results**: The non-deep learning method showed no significant results in detecting apples. The performance was inadequate for the task, highlighting the limitations of traditional techniques in complex image scenarios.
+
+### 2. YOLOv8 (You Only Look Once) - Not Fine-Tuned
+- **Description**: The YOLO model was employed without any fine-tuning on the dataset. The model was used to predict apple locations in sample images.
+- **Results**: The initial results from the not fine-tuned YOLO model were below average. The model struggled to accurately detect apples, indicating that further training and adjustments were necessary.
+
+### 3. SAHI (Slicing and Hierarchical Inference)
+- **Description**: The SAHI framework was implemented to perform inference using a sliding window technique on the images. This method aimed to improve detection accuracy by processing images in smaller segments.
+- **Results**: While SAHI showed better results compared to the previous approaches, the detections were still not plausible. The model's performance was improved but remained insufficient for reliable apple detection.
+
+### 4. Fine-Tuning YOLO on Multiple Datasets
+- **Description**: The YOLO model was fine-tuned on several datasets, incorporating data augmentation techniques to enhance the training process. The goal was to improve the model's ability to generalize and accurately detect apples.
+- **Results**: Despite the efforts to fine-tune the model and apply augmentations, there were no significant improvements in detection performance. The results remained unsatisfactory, even when using SAHI for inference.
+- **Augmentations**: Mixup, HSV changes, Mosaic, Scale
+- **Examples**: You can check some of the results in the *demo* folder
+
+### 5. Solution
+- **Description**: The final solution involved the use of the SAM model to create annotations for the images. These annotations were then uploaded to Roboflow, where they were converted from .txt format to COCO JSON format. This conversion was chosen due to its efficiency compared to implementing it manually. After the dataset was downloaded, masks were extracted and applied to the corresponding images. Finally, the centers for each apple were calculated, providing the output of apple locations with their centers. 
+- **Results**: The results obtained from this approach were far better than those achieved through object detection without additional fine-tuning on more data from this domain.
+
+## Conclusion
+The exploration of various approaches for apple detection revealed the challenges associated with both traditional and deep learning methods. The non-deep learning techniques were ineffective, while the YOLO model did not yield satisfactory results. However, the solution demonstrated significantly better performance in detecting apples and providing their center coordinates. This approach showcased the importance of data preprocessing and the potential of combining different techniques to achieve better results in object detection tasks.
