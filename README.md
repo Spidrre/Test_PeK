@@ -35,3 +35,6 @@ This project is aimed on exploration of various approaches for recognition of ap
 
 ## Conclusion
 The exploration of various approaches for apple detection revealed the challenges associated with both traditional and deep learning methods. The non-deep learning techniques were ineffective, while the YOLO model did not yield satisfactory results. However, the solution demonstrated significantly better performance in detecting apples and providing their center coordinates. This approach showcased the importance of data preprocessing and the potential of combining different techniques to achieve better results in object detection tasks.
+
+## Note
+There is a possibility of another soultions that would require more data from this domain. This data would be later annotated and used for fine-tuning either Object Detection or Segmentation model.
