@@ -20,7 +20,7 @@ This project is aimed on exploration of various approaches for recognition of ap
 - **Results**: The initial results from the not fine-tuned YOLO model were below average. The model struggled to accurately detect apples, indicating that further training and adjustments were necessary.
 
 ### 3. SAHI (Slicing and Hierarchical Inference)
-- **Description**: The SAHI framework was implemented to perform inference using a sliding window technique on the images. This method aimed to improve detection accuracy by processing images in smaller segments.
+- **Description**: The SAHI framework was implemented to perform inference using a sliding window technique on the images since on the images 1-3 imgsz is 7500x3500 pxls. This method aimed to improve detection accuracy by processing images in smaller segments.
 - **Results**: While SAHI showed better results compared to the previous approaches, the detections were still not plausible. The model's performance was improved but remained insufficient for reliable apple detection.
 
 ### 4. Fine-Tuning YOLO on Multiple Datasets
@@ -30,8 +30,11 @@ This project is aimed on exploration of various approaches for recognition of ap
 - **Examples**: You can check some of the results in the *demo* folder
 
 ### 5. Solution
-- **Description**: The final solution involved the use of the SAM model to create annotations for the images. These annotations were then uploaded to Roboflow, where they were converted from .txt format to COCO JSON format. This conversion was chosen due to its efficiency compared to implementing it manually. After the dataset was downloaded, masks were extracted and applied to the corresponding images. Finally, the centers for each apple were calculated, providing the output of apple locations with their centers. 
+- **Description**: The final solution involved the use of the SAM model to create annotations for the images. These annotations were in YOLO segmentation format which were then converted to COCO annotation format. After that masks were extracted and applied to the corresponding images. Finally, the centers for each apple were calculated, providing the output of apple locations with their centers. 
 - **Results**: The results obtained from this approach were far better than those achieved through object detection without additional fine-tuning on more data from this domain.
 
 ## Conclusion
 The exploration of various approaches for apple detection revealed the challenges associated with both traditional and deep learning methods. The non-deep learning techniques were ineffective, while the YOLO model did not yield satisfactory results. However, the solution demonstrated significantly better performance in detecting apples and providing their center coordinates. This approach showcased the importance of data preprocessing and the potential of combining different techniques to achieve better results in object detection tasks.
+
+## Note
+There is a possibility of another soultions that would require more data from this domain. This data would be later annotated and used for fine-tuning either Object Detection or Segmentation model.
